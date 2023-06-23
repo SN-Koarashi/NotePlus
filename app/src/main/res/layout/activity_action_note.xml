@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ActionNoteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btActionDatePrevious"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:rotationY="-180"
+                app:srcCompat="@android:drawable/ic_media_play"
+                app:tint="@color/gray" />
+
+            <Button
+                android:id="@+id/btActionDate"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1970-01-01"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/btActionDateNext"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_media_play"
+                app:tint="@color/gray" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="標題"
+            android:inputType="text"
+            android:maxLength="60" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:windowSoftInputMode="adjustResize">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="記事"
+                    android:inputType="textMultiLine"
+                    android:minLines="4" />
+            </LinearLayout>
+        </ScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/vwGallery"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/imgGallery"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/chkPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="重要" />
+
+            <Switch
+                android:id="@+id/chkDone"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="已完成" />
+
+            <Spinner
+                android:id="@+id/spType"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:spinnerMode="dialog" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btInsertImage"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:textAlignment="center"
+                app:srcCompat="@android:drawable/ic_menu_gallery"
+                app:tint="@color/black" />
+
+            <ImageButton
+                android:id="@+id/btSave"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                app:srcCompat="@android:drawable/ic_menu_save"
+                app:tint="@color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
